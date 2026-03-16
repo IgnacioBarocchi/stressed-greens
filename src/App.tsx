@@ -1,6 +1,5 @@
 /**
- * This file may contain code that uses generative AI for code assistance, unit testing and/or entire functions.
- * The generative AI model(s) used may be a combination of GitHub Copilot, OpenAI ChatGPT or others.
+ * This file may contain code that uses generative AI
  */
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";

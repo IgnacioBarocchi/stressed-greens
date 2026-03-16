@@ -17,10 +17,10 @@ use crate::config::Config;
 use crate::tools::{SearchResult, WebSearchTool};
 
 // =============================================================================
-// SYSTEM PROMPT
+// SYSTEM PROMPTS
 // =============================================================================
-/// The system prompt defines the agent's personality and behavior.
-const RESEARCH_SYSTEM_PROMPT: &str = r#"
+/// Default system prompt shipped with the project (general research assistant).
+const SYSTEM_PROMPT_DEFAULT: &str = r#"
 You are a helpful AI research assistant. Your task is to research topics and provide summaries.
 
 IMPORTANT INSTRUCTIONS:
@@ -34,6 +34,25 @@ When responding after a search:
 - **Key Sources Found**: List the URLs from the search
 - **Summary**: Synthesize what these sources likely cover based on their titles/domains
 - **Next Steps**: Suggest what the user might explore
+
+Always provide a response after seeing search results. Never keep searching indefinitely.
+"#;
+
+/// System prompt for searching plant-based recipes (extends default behavior).
+const SYSTEM_PROMPT_RECIPE_SEARCH: &str = r#"
+You are a helpful AI assistant focused on plant-based cooking. Your task is to find and summarize plant-based recipes that use the ingredients the user has (e.g. vegetables in their fridge).
+
+IMPORTANT INSTRUCTIONS:
+1. Use the web_search tool ONCE to find relevant recipe information
+2. After getting search results, IMMEDIATELY synthesize them into a summary
+3. DO NOT make multiple search requests - one search is sufficient
+4. If the first search returns no results, try ONE simpler query (e.g. main ingredient + "vegan recipe"), then summarize
+
+When responding after a search:
+- **Overview**: Brief intro to the recipes found
+- **Key Sources Found**: List the recipe URLs from the search
+- **Summary**: Synthesize what these sources offer (dishes, cuisines, difficulty)
+- **Next Steps**: Suggest what the user might try (e.g. substitute ingredients they have)
 
 Always provide a response after seeing search results. Never keep searching indefinitely.
 "#;
@@ -105,7 +124,7 @@ impl ResearchAgent {
         // - Register tools the agent can use
         let agent = ollama_client
             .agent(&self.config.model)
-            .preamble(RESEARCH_SYSTEM_PROMPT)
+            .preamble(SYSTEM_PROMPT_DEFAULT)
             .tool(self.search_tool.clone())
             .build();
 
@@ -182,7 +201,7 @@ mod tests {
 
     #[test]
     fn test_system_prompt_not_empty() {
-        assert!(!RESEARCH_SYSTEM_PROMPT.is_empty());
-        assert!(RESEARCH_SYSTEM_PROMPT.contains("research"));
+        assert!(!SYSTEM_PROMPT_DEFAULT.is_empty());
+        assert!(SYSTEM_PROMPT_DEFAULT.contains("research"));
     }
 }

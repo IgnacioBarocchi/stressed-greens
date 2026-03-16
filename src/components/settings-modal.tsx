@@ -1,6 +1,5 @@
 /**
- * This file may contain code that uses generative AI for code assistance, unit testing and/or entire functions.
- * The generative model(s) used may be a combination of GitHub Copilot, OpenAI ChatGPT or others.
+ * This file may contain code that uses generative AI
  */
 
 import {
@@ -376,7 +375,7 @@ export function SettingsModal({ open, onOpenChange, asPage }: SettingsModalProps
                                                 <p className="text-xs text-muted-foreground pt-1">
                                                         {`Created by: `}
                                                         <a
-                                                                href="https://linkedin.com"
+                                                                href="https://www.linkedin.com/in/ignaciobarocchi/"
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                                 className="underline hover:text-foreground"
@@ -385,7 +384,7 @@ export function SettingsModal({ open, onOpenChange, asPage }: SettingsModalProps
                                                         </a>
                                                         {` · `}
                                                         <a
-                                                                href="https://github.com"
+                                                                href="https://github.com/IgnacioBarocchi/stressed-greens"
                                                                 target="_blank"
                                                                 rel="noopener noreferrer"
                                                                 className="underline hover:text-foreground"

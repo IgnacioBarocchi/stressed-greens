@@ -1,3 +1,7 @@
+/**
+ * This file may contain code that uses generative AI
+ */
+
 import { useRef } from "react";
 import { AppHeader } from "@/components/app-header";
 import { AddVegetableForm } from "@/components/add-vegetable-form";

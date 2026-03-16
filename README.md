@@ -1,9 +1,5 @@
-# Tech
+# Stressed Greens
 
-## Tauri + React + Typescript
+Offline-first app for tracking vegetables in your fridge. You add items (preset or custom), see remaining freshness, and the list is ordered by what to use first. The goal is to cut down food waste by making shelf life visible and actionable.
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+No backend: data stays on device (IndexedDB). Built with Tauri, React, TypeScript, and Vite.

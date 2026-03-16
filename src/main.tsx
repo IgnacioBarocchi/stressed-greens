@@ -1,3 +1,7 @@
+/**
+ * This file may contain code that uses generative AI
+ */
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";

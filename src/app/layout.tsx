@@ -1,3 +1,7 @@
+/**
+ * This file may contain code that uses generative AI
+ */
+
 // import type { Metadata, Viewport } from 'next'
 // import { Geist, Geist_Mono } from 'next/font/google'
 // import { Analytics } from '@vercel/analytics/next'

@@ -1,6 +1,5 @@
 /**
- * This file may contain code that uses generative AI for code assistance, unit testing and/or entire functions.
- * The generative model(s) used may be a combination of GitHub Copilot, OpenAI ChatGPT or others.
+ * This file may contain code that uses generative AI
  *
  * Cleans all mock vegetables from the Dexie DB (IndexedDB).
  * Must run in the browser: open /clean-mock.html when the dev server is running,
