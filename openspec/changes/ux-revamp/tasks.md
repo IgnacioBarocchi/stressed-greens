@@ -1,6 +1,6 @@
 ## 1. Cursor rule
 
-- [x] 1.1 Add `.cursor/rules/dev-clarity/prefer-ui-folder.mdc`: when adding or implementing UI components, check and use `src/components/ui/` (e.g. shadcn) before building from scratch; reference badge example
+- [x] 1.1 Add `.cursor/rules/generic/prefer-ui-folder.mdc`: when adding or implementing UI components, check and use `src/components/ui/` (e.g. shadcn) before building from scratch; reference badge example
 
 ## 2. User settings and theme
 

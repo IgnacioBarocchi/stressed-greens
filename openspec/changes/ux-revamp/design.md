@@ -37,7 +37,7 @@ The app is Vite + React with React Router; settings are a modal opened from the 
    - Add a persisted flag (e.g. in user settings) `tourSeen: boolean`. On first load when `!tourSeen`, show a slide-based tour (full-screen or prominent card); each slide one idea (purpose, fridge tracker, recipe finder, sort by freshness, settings). Skip button on every slide; after last or skip, set `tourSeen = true` and persist. No overlay/tooltips; slides only. *Alternative:* Non-dismissible tutorial; rejected in favor of skippable.
 
 5. **Prefer UI folder rule**
-   - Add a Cursor rule file under `.cursor/rules` (e.g. `dev-clarity/prefer-ui-folder.mdc`) stating: when the user asks for new or modified UI components, check and use existing components in `src/components/ui/` (shadcn) before implementing from scratch. Reference badge example (use `@/components/ui/badge` rather than custom badge).
+   - Add a Cursor rule file under `.cursor/rules` (e.g. `generic/prefer-ui-folder.mdc`) stating: when the user asks for new or modified UI components, check and use existing components in `src/components/ui/` (shadcn) before implementing from scratch. Reference badge example (use `@/components/ui/badge` rather than custom badge).
 
 6. **Swipe-to-delete**
    - Use touch handlers (or a small library e.g. react-swipeable) on the vegetable card container. On swipe-to-reveal or swipe-threshold, call the same `onRemove` as the delete button so behavior is identical. Ensure horizontal swipe does not conflict with vertical scroll (e.g. constrain direction or threshold). *Alternative:* Long-press; rejected in favor of swipe for discoverability.
